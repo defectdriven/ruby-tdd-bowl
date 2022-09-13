@@ -17,5 +17,15 @@ describe 'bowling tests' do
       expect(bowler.score).to eq (6)
     end
   end
+  describe 'rolling a spare followed by a 7 and a 2 will show score of 28' do
+    it 'when rolling a spare followed by 7 and 2, the score will be 28' do
+      bowler = Bowler.new
+      bowler.roll(7)
+      bowler.roll(3)
+      bowler.roll(7)
+      bowler.roll(2)
+      expect(bowler.score).to eq (28)
+    end
+  end
 end
 
