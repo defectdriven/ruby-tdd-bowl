@@ -31,5 +31,25 @@ describe 'bowling tests' do
       bowler.roll(0)
       expect(bowler.score).to eq (39)
     end
+    it 'when rolling 8 in the first 9 frames and then getting a spare in the 10th frame, a 3rd ball is scored' do
+      bowler = Bowler.new
+      $i = 0
+      while $i < 9
+        bowler.roll(6)
+        bowler.roll(2)
+        $i += 1
+      end
+      bowler.roll(7)
+      bowler.roll(3)
+      bowler.roll(5)
+      expect(bowler.score).to eq (87)
+    end
+    it 'when rolling a strike, the next two balls are added to the score' do
+      bowler = Bowler.new
+      bowler.roll(10)
+      bowler.roll(6)
+      bowler.roll(3)
+      expect(bowler.score).to eq(28)
+    end
 end
 

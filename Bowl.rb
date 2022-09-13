@@ -16,7 +16,6 @@ class Bowler
         @ball = 2
       when 2
         @score = @score + @frameScore + pins
-        puts(@score)
         @frameScore = @frameScore + pins
         @ball = 1
     end
