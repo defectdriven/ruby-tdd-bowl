@@ -1,5 +1,10 @@
 class Bowler
+  attr_accessor :score
+
+  def initialize()
+    @score = 0
+  end
   def roll(pins)
-    0
+    @score = @score + pins
   end
 end
