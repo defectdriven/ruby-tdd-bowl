@@ -21,5 +21,15 @@ describe 'bowling tests' do
       bowler.roll(2)
       expect(bowler.score).to eq (26)
     end
+    it 'when rolling two spares and then a 6 and a gutter ball, the score will be correct' do
+      bowler = Bowler.new
+      bowler.roll(7)
+      bowler.roll(3)
+      bowler.roll(7)
+      bowler.roll(3)
+      bowler.roll(6)
+      bowler.roll(0)
+      expect(bowler.score).to eq (39)
+    end
 end
 
