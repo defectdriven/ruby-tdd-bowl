@@ -63,5 +63,15 @@ describe 'bowling tests' do
       end
       expect(bowler.score).to eq(300)
     end
+    it 'when missing a perfect game on the last ball and scoring a 9, the score is 299' do
+      bowler = Bowler.new
+      $i = 0
+      while $i < 11
+        bowler.roll(10)
+        $i += 1
+      end
+      bowler.roll(9)
+      expect(bowler.score).to eq(299)
+    end
 end
 

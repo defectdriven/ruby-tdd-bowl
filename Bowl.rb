@@ -11,11 +11,11 @@ class Bowler
   def score
     case @consecutiveStrikes
       when 1
-        @score + 10
+        @score + 10 + @frameScore
       when 2
-        @score + 20
+        @score + 20 + @frameScore
       when 3
-        @score + 30
+        @score + 30 + @frameScore
       else
         @score
     end
