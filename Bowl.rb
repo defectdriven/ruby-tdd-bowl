@@ -15,7 +15,7 @@ class Bowler
       when 2
         @score + 20 + @frameScore
       when 3
-        @score + 30 + @frameScore
+        @score + 30
       else
         @score
     end
@@ -30,19 +30,19 @@ class Bowler
         @ball = 2
         if pins == (10) and @consecutiveStrikes < 3
           @ball = 1
-          @frameScore = 0
           @consecutiveStrikes = @consecutiveStrikes + 1
         elsif pins == (10) and @consecutiveStrikes == 3
           @ball = 1
-          @frameScore = 0
           @score += 30
         elsif @consecutiveStrikes == 3
           @score += 30
           @consecutiveStrikes = 2
         elsif @consecutiveStrikes == 2
           @score += 20 + pins
+          @consecutiveStrikes = 1
         elsif @consecutiveStrikes == 1
           @score = @score + 10 + pins
+          @consecutiveStrikes = 0
         end
       when 2
         if @consecutiveStrikes == 1
