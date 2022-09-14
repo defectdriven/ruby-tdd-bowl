@@ -54,5 +54,14 @@ describe 'bowling tests' do
       puts bowler.score
       expect(bowler.score).to eq(28)
     end
+    it 'when rolling a game of strikes (perfect game) the score is 300' do
+      bowler = Bowler.new
+      $i = 0
+      while $i < 12
+        bowler.roll(10)
+        $i += 1
+      end
+      expect(bowler.score).to eq(300)
+    end
 end
 
