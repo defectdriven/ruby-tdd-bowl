@@ -47,8 +47,11 @@ describe 'bowling tests' do
     it 'when rolling a strike, the next two balls are added to the score' do
       bowler = Bowler.new
       bowler.roll(10)
+      puts bowler.score
       bowler.roll(6)
+      puts bowler.score
       bowler.roll(3)
+      puts bowler.score
       expect(bowler.score).to eq(28)
     end
 end
