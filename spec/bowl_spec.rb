@@ -70,19 +70,13 @@ describe 'bowling tests' do
       bowler.roll(9)
       expect(bowler.score).to eq(299)
     end
-    it 'when rolling two strikes and then a spare (3 7), the score is 43' do
+    it 'when rolling two strikes and then a spare (3 7), the score is 40' do
       bowler = Bowler.new
       bowler.roll(10)
-      puts('one')
-      puts(bowler.score)
       bowler.roll(10)
-      puts('two')
-      puts(bowler.score)
       bowler.roll(3)
-      puts('three')
-      puts(bowler.score)
       bowler.roll(7)
-      expect(bowler.score).to eq (43)
+      expect(bowler.score).to eq (40)
     end
 end
 

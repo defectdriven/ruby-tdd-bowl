@@ -42,13 +42,13 @@ class Bowler
           @consecutiveStrikes = 1
         elsif @consecutiveStrikes == 1
           @score = @score + 10 + pins
-          @consecutiveStrikes = 0
         end
       when 2
         if @consecutiveStrikes == 1
           @score = @score + pins
           @consecutiveStrikes = 0
         end
+
         @score = @score + @frameScore + pins
         @frameScore = @frameScore + pins
         @ball = 1
