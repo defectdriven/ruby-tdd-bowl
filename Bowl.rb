@@ -1,5 +1,5 @@
 class Bowler
-  attr_accessor :score
+  attr_accessor :score, :consecutiveStrikes, :frameScore
 
   def initialize()
     @score = 0
@@ -42,15 +42,15 @@ class Bowler
           @consecutiveStrikes = 1
         elsif @consecutiveStrikes == 1
           @score = @score + 10 + pins
-        end
-      when 2
-        if @consecutiveStrikes == 1
-          @score = @score + pins
           @consecutiveStrikes = 0
         end
-
-        @score = @score + @frameScore + pins
+      when 2
         @frameScore = @frameScore + pins
+        if @consecutiveStrikes == 1
+          @score = @score + @frameScore
+          @consecutiveStrikes = 0
+        end
+        @score = @score + @frameScore
         @ball = 1
     end
   end
